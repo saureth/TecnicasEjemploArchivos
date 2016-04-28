@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public class MapeoArchivo extends javax.swing.JFrame {
     
     public Archivo miArchivo;
-    public String texto;
+    public String textoNuevo;
     
     public MapeoArchivo() {
         initComponents();
@@ -61,8 +61,10 @@ public class MapeoArchivo extends javax.swing.JFrame {
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
         miArchivo= new Archivo(jFileChooser1.getSelectedFile());
-        texto = jTextArea1.getText();
-        JOptionPane.showMessageDialog(null,miArchivo.edit(texto));
+        textoNuevo = jTextArea1.getText();
+        String textoCompleto = miArchivo.edit(textoNuevo);
+        JOptionPane.showMessageDialog(null,textoCompleto);
+        textoNuevo=textoCompleto;
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
     public static void main(String args[]) {
